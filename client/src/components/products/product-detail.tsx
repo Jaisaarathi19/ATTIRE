@@ -156,22 +156,30 @@ export function ProductDetail({ product }: ProductDetailProps) {
           transition={{ duration: 0.3 }}
         >
           <img 
-            src={product.images[selectedImage]} 
+            src={product.images?.[selectedImage] || 'https://placehold.co/600x600/e2e8f0/64748b?text=No+Image'} 
             alt={product.name} 
             className="w-full h-full object-center object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = 'https://placehold.co/600x600/e2e8f0/64748b?text=Image+Error';
+            }}
           />
         </motion.div>
         <div className="grid grid-cols-4 gap-2">
-          {product.images.map((image, index) => (
+          {(product.images || []).map((image, index) => (
             <button
               key={index}
               className={`aspect-w-1 aspect-h-1 rounded-md overflow-hidden ${selectedImage === index ? 'ring-2 ring-primary-500' : ''}`}
               onClick={() => setSelectedImage(index)}
             >
               <img 
-                src={image} 
+                src={image || 'https://placehold.co/200x200/e2e8f0/64748b?text=No+Image'} 
                 alt={`${product.name} view ${index + 1}`} 
                 className="w-full h-full object-center object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://placehold.co/200x200/e2e8f0/64748b?text=Image+Error';
+                }}
               />
             </button>
           ))}
@@ -186,7 +194,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
           <div className="flex text-amber-400">
             {Array.from({ length: 5 }).map((_, i) => {
               // Full, half, or empty star
-              const starValue = product.rating - i;
+              const starValue = (product.rating || 0) - i;
               return (
                 <span key={i}>
                   {starValue >= 1 ? (

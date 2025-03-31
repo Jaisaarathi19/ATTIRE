@@ -107,9 +107,13 @@ export function ProductCard({ product, className }: ProductCardProps) {
       <Link href={`/product/${product.slug}`}>
         <div className="relative aspect-w-4 aspect-h-5">
           <img 
-            src={product.images[0]} 
+            src={product.images?.[0] || 'https://placehold.co/600x800/e2e8f0/64748b?text=No+Image'} 
             alt={product.name} 
             className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = 'https://placehold.co/600x800/e2e8f0/64748b?text=Image+Error';
+            }}
           />
           <div className="absolute top-2 left-2 flex flex-col gap-1">
             {product.trending && (
@@ -169,7 +173,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             <div className="flex text-amber-400 text-xs">
               {Array.from({ length: 5 }).map((_, i) => {
                 // Full, half, or empty star
-                const starValue = product.rating - i;
+                const starValue = (product.rating || 0) - i;
                 return (
                   <span key={i}>
                     {starValue >= 1 ? (

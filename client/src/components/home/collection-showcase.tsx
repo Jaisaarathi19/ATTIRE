@@ -6,14 +6,14 @@ import { Button } from '@/components/ui/button';
 const collections = [
   {
     id: 1,
-    title: 'Wedding Collection',
-    description: 'Elegant ethnic wear for your special day',
-    image: 'https://images.unsplash.com/photo-1614676471928-2ebd94e2e2d4',
-    tag: 'EXCLUSIVE',
+    title: 'Summer Style Collection',
+    description: 'Fresh, coastal-inspired looks for a stylish summer',
+    image: '/attached_assets/image_1743431643431.png',
+    tag: 'NEW ARRIVAL',
     tagColor: 'bg-primary-600',
     buttonColor: 'text-primary-600',
     buttonHoverColor: 'hover:bg-primary-50',
-    link: '/products/category/ethnic?tag=wedding'
+    link: '/products/category/men?tag=summer'
   },
   {
     id: 2,
@@ -78,9 +78,13 @@ export function CollectionShowcase() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               <img 
-                src={`${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80`} 
+                src={collection.image.startsWith('/attached_assets') ? collection.image : `${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80`} 
                 alt={collection.title} 
-                className="w-full h-64 sm:h-80 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105" 
+                className="w-full h-64 sm:h-80 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://placehold.co/800x500/e2e8f0/64748b?text=Image+Error';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
@@ -114,9 +118,13 @@ export function CollectionShowcase() {
             >
               <div className="relative pt-[100%]">
                 <img 
-                  src={`${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80`} 
+                  src={collection.image.startsWith('/attached_assets') ? collection.image : `${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80`} 
                   alt={collection.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://placehold.co/600x600/e2e8f0/64748b?text=Image+Error';
+                  }}
                 />
               </div>
               <div className="p-4 sm:p-6">

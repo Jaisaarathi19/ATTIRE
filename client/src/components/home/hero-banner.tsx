@@ -7,9 +7,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const bannerData = [
   {
     id: 1,
-    title: "Redefining Indian Fashion",
-    subTitle: "Discover the perfect blend of tradition and modernity with our curated collection",
-    image: "https://images.unsplash.com/photo-1623113562175-5851e10caa99",
+    title: "Redefining Summer Style",
+    subTitle: "Discover the perfect blend of comfort and elegance with our fresh summer collection",
+    image: "/attached_assets/image_1743431643431.png",
     tag: "NEW ARRIVAL",
     collection: "Summer Collection 2023",
     discount: "30% OFF"
@@ -155,9 +155,13 @@ export function HeroBanner() {
                 transition={{ duration: 0.5 }}
               >
                 <img 
-                  src={`${current.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000&q=80`} 
+                  src={current.image.startsWith('/attached_assets') ? current.image : `${current.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000&q=80`} 
                   alt="Latest fashion collection showcase" 
                   className="w-full h-auto object-cover rounded-lg"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://placehold.co/800x1000/e2e8f0/64748b?text=Image+Error';
+                  }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/60 to-transparent">
                   <span className="inline-block px-3 py-1 sm:px-4 sm:py-1 bg-primary-600 text-white text-xs font-bold rounded-full">

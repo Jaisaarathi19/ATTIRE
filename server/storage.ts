@@ -293,23 +293,23 @@ export class MemStorage implements IStorage {
         reviewCount: 124
       },
       {
-        name: "Men's Black Kurta",
-        slug: "mens-black-kurta",
-        description: "A classic black kurta crafted from premium cotton fabric. Perfect for festivals, celebrations or casual wear.",
+        name: "Men's Mint Striped Shirt",
+        slug: "mens-mint-striped-shirt",
+        description: "Premium mint green striped shirt crafted with soft fabric for a relaxed, stylish summer look. Perfect for beach holidays and casual outings.",
         price: 1499,
         originalPrice: 1999,
         discount: 25,
         categoryId: 1, // Men
         images: [
-          "https://images.unsplash.com/photo-1597983073453-ef06cfc2240e?q=80&w=600",
-          "https://images.unsplash.com/photo-1604982612209-64e7f01bc5d9?q=80&w=600",
-          "https://images.unsplash.com/photo-1590403813611-8c1a26003c7c?q=80&w=600"
+          "/attached_assets/image_1743431643431.png",
+          "/attached_assets/image_1743431643431.png",
+          "/attached_assets/image_1743431643431.png"
         ],
         inventory: 78,
-        featured: false,
+        featured: true,
         trending: true,
-        rating: 5.0,
-        reviewCount: 89
+        rating: 4.9,
+        reviewCount: 112
       },
       {
         name: "Embroidered Lehenga",
