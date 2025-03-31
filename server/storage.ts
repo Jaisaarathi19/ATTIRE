@@ -259,12 +259,12 @@ export class MemStorage implements IStorage {
 
     // Seed categories
     const categories: InsertCategory[] = [
-      { name: "Men", slug: "men", image: "https://images.unsplash.com/photo-1617137968427-85924c800a22", description: "Men's Fashion" },
-      { name: "Women", slug: "women", image: "https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda", description: "Women's Fashion" },
-      { name: "Kids", slug: "kids", image: "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8", description: "Kids Fashion" },
-      { name: "Ethnic", slug: "ethnic", image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b", description: "Ethnic Wear" },
-      { name: "Western", slug: "western", image: "https://images.unsplash.com/photo-1551232864-3f0890e580d9", description: "Western Wear" },
-      { name: "Accessories", slug: "accessories", image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d", description: "Fashion Accessories" }
+      { name: "Men", slug: "men", image: "https://images.unsplash.com/photo-1550246140-29f40b909e5a?q=80&w=600", description: "Men's Fashion" },
+      { name: "Women", slug: "women", image: "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?q=80&w=600", description: "Women's Fashion" },
+      { name: "Kids", slug: "kids", image: "https://images.unsplash.com/photo-1624435990733-aca957d0bbcf?q=80&w=600", description: "Kids Fashion" },
+      { name: "Ethnic", slug: "ethnic", image: "https://images.unsplash.com/photo-1610030469668-76cd682c6e53?q=80&w=600", description: "Ethnic Wear" },
+      { name: "Western", slug: "western", image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600", description: "Western Wear" },
+      { name: "Accessories", slug: "accessories", image: "https://images.unsplash.com/photo-1601821765780-754fa98637c1?q=80&w=600", description: "Fashion Accessories" }
     ];
 
     for (const category of categories) {
@@ -282,9 +282,9 @@ export class MemStorage implements IStorage {
         discount: 20,
         categoryId: 2, // Women
         images: [
-          "https://images.unsplash.com/photo-1522682078546-15d98fc6c6fd",
-          "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446",
-          "https://images.unsplash.com/photo-1566174053879-31528523f8c6"
+          "https://images.unsplash.com/photo-1623609163859-ca93c959b98a?q=80&w=600",
+          "https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=600",
+          "https://images.unsplash.com/photo-1572804013427-4d7ca7268217?q=80&w=600"
         ],
         inventory: 45,
         featured: true,
@@ -301,9 +301,9 @@ export class MemStorage implements IStorage {
         discount: 25,
         categoryId: 1, // Men
         images: [
-          "https://images.unsplash.com/photo-1618886614638-80e3c103d465",
-          "https://images.unsplash.com/photo-1610123598157-f7dfd74d2425",
-          "https://images.unsplash.com/photo-1572307480813-ceb0e59d8325"
+          "https://images.unsplash.com/photo-1597983073453-ef06cfc2240e?q=80&w=600",
+          "https://images.unsplash.com/photo-1604982612209-64e7f01bc5d9?q=80&w=600",
+          "https://images.unsplash.com/photo-1590403813611-8c1a26003c7c?q=80&w=600"
         ],
         inventory: 78,
         featured: false,
@@ -320,9 +320,9 @@ export class MemStorage implements IStorage {
         discount: 38,
         categoryId: 4, // Ethnic
         images: [
-          "https://images.unsplash.com/photo-1596755094514-f87e34085b2c",
-          "https://images.unsplash.com/photo-1626197031507-c17099753f20",
-          "https://images.unsplash.com/photo-1596720226768-e0b865a48894"
+          "https://images.unsplash.com/photo-1598359007833-f8a3ecfccee6?q=80&w=600",
+          "https://images.unsplash.com/photo-1600488999785-a12f63eb5a16?q=80&w=600",
+          "https://images.unsplash.com/photo-1600488999872-fb78426ee27f?q=80&w=600"
         ],
         inventory: 32,
         featured: true,
@@ -339,9 +339,9 @@ export class MemStorage implements IStorage {
         discount: 23,
         categoryId: 5, // Western
         images: [
-          "https://images.unsplash.com/photo-1620012253295-c15cc3e65df4",
-          "https://images.unsplash.com/photo-1598033129183-c4f50c736f10",
-          "https://images.unsplash.com/photo-1581655353564-df123a1eb820"
+          "https://images.unsplash.com/photo-1624835020714-f9521e3e1421?q=80&w=600",
+          "https://images.unsplash.com/photo-1563630423918-b58f07336ac9?q=80&w=600",
+          "https://images.unsplash.com/photo-1577381450259-a0e1f56a85a6?q=80&w=600"
         ],
         inventory: 120,
         featured: false,
@@ -358,9 +358,9 @@ export class MemStorage implements IStorage {
         discount: 29,
         categoryId: 3, // Kids
         images: [
-          "https://images.unsplash.com/photo-1519238360632-a91498eb069f",
-          "https://images.unsplash.com/photo-1502451885777-16c98b07834a",
-          "https://images.unsplash.com/photo-1503944583220-79d8926ad5e2"
+          "https://images.unsplash.com/photo-1476344305746-32062f10f791?q=80&w=600",
+          "https://images.unsplash.com/photo-1535572290543-960a8046f5af?q=80&w=600",
+          "https://images.unsplash.com/photo-1540479859555-17af45c78602?q=80&w=600"
         ],
         inventory: 85,
         featured: true,
@@ -377,9 +377,9 @@ export class MemStorage implements IStorage {
         discount: 33,
         categoryId: 6, // Accessories
         images: [
-          "https://images.unsplash.com/photo-1631163159638-7d7fb13410a1",
-          "https://images.unsplash.com/photo-1535556116002-6281ff3e9f36",
-          "https://images.unsplash.com/photo-1561172317-5860051e5de1"
+          "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?q=80&w=600",
+          "https://images.unsplash.com/photo-1598224572873-f81da0bf1222?q=80&w=600",
+          "https://images.unsplash.com/photo-1633810541031-84d98b471cae?q=80&w=600"
         ],
         inventory: 54,
         featured: false,
@@ -396,9 +396,9 @@ export class MemStorage implements IStorage {
         discount: 33,
         categoryId: 4, // Ethnic
         images: [
-          "https://images.unsplash.com/photo-1610030469668-76cd682c6e53",
-          "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b",
-          "https://images.unsplash.com/photo-1620741212082-4e5c583f9019"
+          "https://images.unsplash.com/photo-1610030469668-76cd682c6e53?q=80&w=600",
+          "https://images.unsplash.com/photo-1611042553484-d61f84d22784?q=80&w=600",
+          "https://images.unsplash.com/photo-1603400521630-9f2de124b33b?q=80&w=600"
         ],
         inventory: 40,
         featured: true,
@@ -415,9 +415,9 @@ export class MemStorage implements IStorage {
         discount: 28,
         categoryId: 5, // Western
         images: [
-          "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec",
-          "https://images.unsplash.com/photo-1542272604-787c3835535d",
-          "https://images.unsplash.com/photo-1604176354204-9268737828e4"
+          "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600",
+          "https://images.unsplash.com/photo-1555689502-c4b22d76c56f?q=80&w=600",
+          "https://images.unsplash.com/photo-1542060748-10c28b62716f?q=80&w=600"
         ],
         inventory: 95,
         featured: false,
