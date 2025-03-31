@@ -9,7 +9,7 @@ const bannerData = [
     id: 1,
     title: "Redefining Summer Style",
     subTitle: "Discover the perfect blend of comfort and elegance with our fresh summer collection",
-    image: "/attached_assets/image_1743431643431.png",
+    image: "/assets/mint-striped-shirt.png",
     tag: "NEW ARRIVAL",
     collection: "Summer Collection 2023",
     discount: "30% OFF"
@@ -155,7 +155,7 @@ export function HeroBanner() {
                 transition={{ duration: 0.5 }}
               >
                 <img 
-                  src={current.image.startsWith('/attached_assets') ? current.image : `${current.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000&q=80`} 
+                  src={current.image.startsWith('/assets') ? current.image : `${current.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000&q=80`} 
                   alt="Latest fashion collection showcase" 
                   className="w-full h-auto object-cover rounded-lg"
                   onError={(e) => {

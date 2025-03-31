@@ -8,7 +8,7 @@ const collections = [
     id: 1,
     title: 'Summer Style Collection',
     description: 'Fresh, coastal-inspired looks for a stylish summer',
-    image: '/attached_assets/image_1743431643431.png',
+    image: '/assets/mint-striped-shirt.png',
     tag: 'NEW ARRIVAL',
     tagColor: 'bg-primary-600',
     buttonColor: 'text-primary-600',
@@ -17,14 +17,14 @@ const collections = [
   },
   {
     id: 2,
-    title: 'Summer Collection',
-    description: 'Light, breezy styles for the warm weather',
-    image: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3',
-    tag: 'NEW SEASON',
+    title: 'Festive Collection',
+    description: 'Elegant ethnic wear for celebrations and special occasions',
+    image: '/assets/festive-saree.png',
+    tag: 'FESTIVE SPECIAL',
     tagColor: 'bg-secondary-600',
     buttonColor: 'text-secondary-600',
     buttonHoverColor: 'hover:bg-secondary-50',
-    link: '/products/category/western?tag=summer'
+    link: '/products/category/ethnic?tag=festive'
   }
 ];
 
@@ -78,7 +78,7 @@ export function CollectionShowcase() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               <img 
-                src={collection.image.startsWith('/attached_assets') ? collection.image : `${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80`} 
+                src={collection.image.startsWith('/assets') ? collection.image : `${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500&q=80`} 
                 alt={collection.title} 
                 className="w-full h-64 sm:h-80 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
@@ -118,7 +118,7 @@ export function CollectionShowcase() {
             >
               <div className="relative pt-[100%]">
                 <img 
-                  src={collection.image.startsWith('/attached_assets') ? collection.image : `${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80`} 
+                  src={collection.image.startsWith('/assets') ? collection.image : `${collection.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600&q=80`} 
                   alt={collection.title} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {

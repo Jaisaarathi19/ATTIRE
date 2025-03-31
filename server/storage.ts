@@ -301,9 +301,9 @@ export class MemStorage implements IStorage {
         discount: 25,
         categoryId: 1, // Men
         images: [
-          "/attached_assets/image_1743431643431.png",
-          "/attached_assets/image_1743431643431.png",
-          "/attached_assets/image_1743431643431.png"
+          "/assets/mint-striped-shirt.png",
+          "/assets/mint-striped-shirt.png",
+          "/assets/mint-striped-shirt.png"
         ],
         inventory: 78,
         featured: true,
