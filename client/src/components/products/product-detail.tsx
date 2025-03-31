@@ -290,7 +290,8 @@ export function ProductDetail({ product }: ProductDetailProps) {
             </select>
           </div>
           <Button
-            className="w-3/4 bg-white text-gray-900 border border-gray-200 flex items-center justify-center"
+            variant="black"
+            className="w-3/4 flex items-center justify-center"
             onClick={handleAddToCart}
           >
             <ShoppingBag className="mr-2 h-5 w-5" />

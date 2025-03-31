@@ -18,4 +18,8 @@
   .bg-white, [class*="bg-gray-50"], [class*="bg-gray-100"] {
     @apply text-gray-900;
   }
+  
+  .bg-black, [class*="bg-gray-900"], [class*="bg-gray-800"], .bg-primary-900, .bg-primary-800 {
+    @apply text-white;
+  }
 }

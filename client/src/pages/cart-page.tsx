@@ -66,7 +66,7 @@ export default function CartPage() {
                 <ShoppingBag className="h-16 w-16 text-gray-300 mb-4" />
                 <h2 className="text-xl font-medium text-gray-900 mb-2">Your cart is empty</h2>
                 <p className="text-gray-600 mb-6">Looks like you haven't added any items to your cart yet.</p>
-                <Button asChild>
+                <Button variant="black" asChild>
                   <Link href="/products">Browse Products</Link>
                 </Button>
               </div>
@@ -149,6 +149,7 @@ export default function CartPage() {
                     </div>
                     
                     <Button 
+                      variant="black"
                       className="w-full mt-6" 
                       size="lg"
                       onClick={handleCheckout}

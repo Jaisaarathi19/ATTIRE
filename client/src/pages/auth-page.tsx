@@ -219,6 +219,7 @@ export default function AuthPage() {
                         
                         <Button 
                           type="submit" 
+                          variant="black"
                           className="w-full" 
                           size="lg"
                           disabled={loginMutation.isPending}
@@ -346,6 +347,7 @@ export default function AuthPage() {
                         
                         <Button 
                           type="submit" 
+                          variant="black"
                           className="w-full" 
                           size="lg"
                           disabled={registerMutation.isPending}

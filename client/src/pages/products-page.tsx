@@ -158,7 +158,7 @@ export default function ProductsPage() {
             
             <div className="flex items-center space-x-2">
               <Button
-                variant="outline"
+                variant="black"
                 size="sm"
                 className="md:hidden"
                 onClick={() => setShowFilters(!showFilters)}
@@ -352,6 +352,7 @@ export default function ProductsPage() {
                   </Button>
                   
                   <Button
+                    variant="black"
                     className="mt-4 w-full"
                     onClick={() => setShowFilters(false)}
                   >
@@ -387,7 +388,7 @@ export default function ProductsPage() {
                   <p className="text-gray-500 mb-6">
                     Try adjusting your search or filter criteria to find what you're looking for.
                   </p>
-                  <Button onClick={clearFilters}>Clear Filters</Button>
+                  <Button variant="black" onClick={clearFilters}>Clear Filters</Button>
                 </div>
               )}
             </div>

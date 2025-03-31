@@ -142,8 +142,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
             transition={{ duration: 0.2 }}
           >
             <Button 
-              variant="default" 
-              className="w-full py-2 bg-white text-gray-900 rounded-full font-medium text-sm hover:bg-primary-50 transition duration-300"
+              variant="black" 
+              className="w-full py-2 rounded-full font-medium text-sm"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();

@@ -139,10 +139,10 @@ export default function CheckoutPage() {
               </div>
               
               <div className="flex justify-center space-x-4">
-                <Button asChild className="bg-white text-gray-900 border border-gray-200">
+                <Button variant="black" asChild>
                   <a href="/">Return to Home</a>
                 </Button>
-                <Button variant="outline" asChild className="bg-white text-gray-900 border border-gray-200">
+                <Button variant="outline" asChild>
                   <a href="/products">Continue Shopping</a>
                 </Button>
               </div>
@@ -330,7 +330,8 @@ export default function CheckoutPage() {
                       <div className="pt-4">
                         <Button 
                           type="submit" 
-                          className="w-full bg-white text-gray-900 border border-gray-200"
+                          variant="black"
+                          className="w-full"
                           size="lg"
                           disabled={isSubmitting}
                         >
