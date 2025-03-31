@@ -219,7 +219,7 @@ export function CartDrawerProvider({ children }: { children: React.ReactNode }) 
                   <ShoppingBag className="h-16 w-16 text-gray-300 mb-4" />
                   <p className="text-gray-500 text-center">Your cart is empty</p>
                   <Button 
-                    className="mt-4"
+                    className="mt-4 bg-white text-gray-900 border border-gray-200"
                     onClick={() => {
                       closeCart();
                       navigate("/products");
@@ -248,14 +248,14 @@ export function CartDrawerProvider({ children }: { children: React.ReactNode }) 
                     </div>
                     <p className="text-sm text-gray-500 mb-4">Shipping and taxes calculated at checkout</p>
                     <Button 
-                      className="w-full mb-2" 
+                      className="w-full mb-2 bg-white text-gray-900 border border-gray-200" 
                       onClick={handleCheckout}
                     >
                       Proceed to Checkout
                     </Button>
                     <Button 
                       variant="outline" 
-                      className="w-full"
+                      className="w-full bg-white text-gray-900 border border-gray-200"
                       onClick={() => {
                         closeCart();
                         navigate("/products");

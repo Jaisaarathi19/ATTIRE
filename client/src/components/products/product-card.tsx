@@ -143,7 +143,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
           >
             <Button 
               variant="default" 
-              className="w-full py-2 bg-white text-primary-600 rounded-full font-medium text-sm hover:bg-primary-50 transition duration-300"
+              className="w-full py-2 bg-white text-gray-900 rounded-full font-medium text-sm hover:bg-primary-50 transition duration-300"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();

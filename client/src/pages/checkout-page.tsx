@@ -330,7 +330,7 @@ export default function CheckoutPage() {
                       <div className="pt-4">
                         <Button 
                           type="submit" 
-                          className="w-full"
+                          className="w-full bg-white text-gray-900 border border-gray-200"
                           size="lg"
                           disabled={isSubmitting}
                         >
