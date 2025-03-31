@@ -92,7 +92,7 @@ export function Header() {
                 <Link 
                   key={category.id} 
                   href={`/products/category/${category.slug}`}
-                  className="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors"
+                  className="text-sm font-medium text-gray-900 hover:text-primary-600 transition-colors"
                 >
                   {category.name}
                 </Link>
@@ -109,18 +109,18 @@ export function Header() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-9 pr-4 py-1.5 border border-gray-300 rounded-full text-sm w-44 lg:w-56 bg-gray-50"
                 />
-                <Search className="absolute left-3 top-2 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-2 h-4 w-4 text-gray-500" />
               </form>
               
-              <Link href={user ? "/account" : "/auth"} className="text-gray-600 hover:text-primary-600 transition-colors">
+              <Link href={user ? "/account" : "/auth"} className="text-gray-900 hover:text-primary-600 transition-colors">
                 <User className="h-5 w-5" />
               </Link>
-              <Link href="/wishlist" className="text-gray-600 hover:text-primary-600 transition-colors">
+              <Link href="/wishlist" className="text-gray-900 hover:text-primary-600 transition-colors">
                 <Heart className="h-5 w-5" />
               </Link>
               <button 
                 onClick={openCart}
-                className="text-gray-600 hover:text-primary-600 transition-colors relative"
+                className="text-gray-900 hover:text-primary-600 transition-colors relative"
                 aria-label="Open cart"
               >
                 <ShoppingBag className="h-5 w-5" />
