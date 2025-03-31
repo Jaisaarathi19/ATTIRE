@@ -94,16 +94,22 @@ export function Header() {
           </nav>
           
           {/* Right section icons */}
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-6">
-            <form onSubmit={handleSearch} className="relative">
+          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-4 lg:space-x-6">
+            <form onSubmit={handleSearch} className="relative hidden lg:block">
               <Input
                 type="text"
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm w-64"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm w-56 xl:w-64"
               />
               <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+            </form>
+            
+            <form onSubmit={handleSearch} className="relative lg:hidden">
+              <Button variant="ghost" size="icon" className="text-gray-500 hover:text-primary-600" type="submit">
+                <Search className="h-6 w-6" />
+              </Button>
             </form>
             
             <Link href={user ? "/account" : "/auth"} className="text-gray-500 hover:text-primary-600 transition-colors">

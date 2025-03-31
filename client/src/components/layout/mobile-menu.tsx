@@ -4,6 +4,7 @@ import { X, User, Heart, ShoppingBag, Search } from "lucide-react";
 import { useCart } from "@/components/cart/cart-drawer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useAuth } from "@/hooks/use-auth";
 import { Category } from "@/types";
 
@@ -34,10 +35,10 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-white">
-      <div className="p-4 flex items-center justify-between shadow-sm">
+    <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
+      <div className="sticky top-0 p-4 flex items-center justify-between shadow-sm bg-white">
         <Link href="/" onClick={onClose}>
-          <span className="text-2xl font-bold font-heading text-primary-600">ATTIRE</span>
+          <span className="text-xl sm:text-2xl font-bold font-heading text-primary-600">ATTIRE</span>
         </Link>
         <Button 
           variant="ghost" 
@@ -49,8 +50,8 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
         </Button>
       </div>
       
-      <div className="p-4">
-        <form onSubmit={handleSearch} className="relative mb-4">
+      <div className="p-4 pb-20">
+        <form onSubmit={handleSearch} className="relative mb-6">
           <Input
             type="text"
             placeholder="Search products..."
@@ -61,12 +62,13 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
           <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
         </form>
         
-        <nav className="space-y-4">
+        <h3 className="font-medium text-gray-500 uppercase text-xs tracking-wider mb-3">Categories</h3>
+        <nav className="space-y-1 mb-8">
           {categories.map((category) => (
             <Link
               key={category.id}
               href={`/products/category/${category.slug}`}
-              className="block py-2 text-base font-medium text-gray-900 border-b border-gray-200"
+              className="flex items-center py-3 text-base font-medium text-gray-900 border-b border-gray-200 hover:text-primary-600 transition-colors"
               onClick={onClose}
             >
               {category.name}
@@ -74,17 +76,18 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
           ))}
           <Link
             href="/products"
-            className="block py-2 text-base font-medium text-gray-900 border-b border-gray-200"
+            className="flex items-center py-3 text-base font-medium text-gray-900 border-b border-gray-200 hover:text-primary-600 transition-colors"
             onClick={onClose}
           >
             All Products
           </Link>
         </nav>
         
-        <div className="mt-6 space-y-3">
+        <h3 className="font-medium text-gray-500 uppercase text-xs tracking-wider mb-3">Account</h3>
+        <div className="space-y-4">
           <Link
             href={user ? "/account" : "/auth"}
-            className="flex items-center py-2 text-primary-600"
+            className="flex items-center py-2 text-gray-900 hover:text-primary-600 transition-colors"
             onClick={onClose}
           >
             <User className="mr-3 h-5 w-5" /> 
@@ -92,17 +95,24 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
           </Link>
           <Link
             href="/wishlist"
-            className="flex items-center py-2 text-primary-600"
+            className="flex items-center py-2 text-gray-900 hover:text-primary-600 transition-colors"
             onClick={onClose}
           >
             <Heart className="mr-3 h-5 w-5" /> Wishlist
           </Link>
           <button
             onClick={handleCartClick}
-            className="flex items-center py-2 text-primary-600 w-full text-left"
+            className="flex items-center py-2 text-gray-900 hover:text-primary-600 transition-colors w-full text-left"
           >
             <ShoppingBag className="mr-3 h-5 w-5" /> Cart
           </button>
+        </div>
+        
+        <div className="mt-8 pt-6 border-t border-gray-200">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-600">Theme</span>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </div>

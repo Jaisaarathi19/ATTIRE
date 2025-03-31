@@ -48,8 +48,8 @@ export function FeaturedProducts() {
     // Simulated filtering logic - in real app would use tags or categories
     const filterMap: Record<ProductFilter, (p: Product) => boolean> = {
       'all': () => true,
-      'new': (p) => p.createdAt > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
-      'bestseller': (p) => p.rating >= 4.5,
+      'new': (p) => p.createdAt ? p.createdAt > new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) : false,
+      'bestseller': (p) => p.rating ? p.rating >= 4.5 : false,
       'festival': (p) => p.categoryId === 4, // Assuming 4 is Ethnic
       'wedding': (p) => p.price >= 3000,
       'summer': (p) => p.categoryId === 5 || p.categoryId === 2, // Western or Women
@@ -139,48 +139,50 @@ export function FeaturedProducts() {
         
         <div 
           id="categories-container"
-          className="flex items-center border-b border-gray-200 pb-2 mb-6 overflow-x-auto scrollbar-hide"
+          className="flex items-center border-b border-gray-200 pb-2 mb-6 overflow-x-auto md:justify-center scrollbar-hide"
         >
-          <CategoryButton 
-            active={activeFilter === 'all'} 
-            onClick={() => setActiveFilter('all')}
-          >
-            All Products
-          </CategoryButton>
-          <CategoryButton 
-            active={activeFilter === 'new'} 
-            onClick={() => setActiveFilter('new')}
-          >
-            New Arrivals
-          </CategoryButton>
-          <CategoryButton 
-            active={activeFilter === 'bestseller'} 
-            onClick={() => setActiveFilter('bestseller')}
-          >
-            Best Sellers
-          </CategoryButton>
-          <CategoryButton 
-            active={activeFilter === 'festival'} 
-            onClick={() => setActiveFilter('festival')}
-          >
-            Festival Special
-          </CategoryButton>
-          <CategoryButton 
-            active={activeFilter === 'wedding'} 
-            onClick={() => setActiveFilter('wedding')}
-          >
-            Wedding Collection
-          </CategoryButton>
-          <CategoryButton 
-            active={activeFilter === 'summer'} 
-            onClick={() => setActiveFilter('summer')}
-          >
-            Summer Essentials
-          </CategoryButton>
+          <div className="flex items-center min-w-max gap-2 sm:gap-3 px-1">
+            <CategoryButton 
+              active={activeFilter === 'all'} 
+              onClick={() => setActiveFilter('all')}
+            >
+              All
+            </CategoryButton>
+            <CategoryButton 
+              active={activeFilter === 'new'} 
+              onClick={() => setActiveFilter('new')}
+            >
+              New Arrivals
+            </CategoryButton>
+            <CategoryButton 
+              active={activeFilter === 'bestseller'} 
+              onClick={() => setActiveFilter('bestseller')}
+            >
+              Best Sellers
+            </CategoryButton>
+            <CategoryButton 
+              active={activeFilter === 'festival'} 
+              onClick={() => setActiveFilter('festival')}
+            >
+              Festival
+            </CategoryButton>
+            <CategoryButton 
+              active={activeFilter === 'wedding'} 
+              onClick={() => setActiveFilter('wedding')}
+            >
+              Wedding
+            </CategoryButton>
+            <CategoryButton 
+              active={activeFilter === 'summer'} 
+              onClick={() => setActiveFilter('summer')}
+            >
+              Summer
+            </CategoryButton>
+          </div>
         </div>
         
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"
           variants={container}
           initial="hidden"
           animate="show"
