@@ -56,17 +56,16 @@ export function Header() {
   return (
     <header className={`sticky top-0 bg-white z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
-          {/* Logo */}
-          <div className="flex justify-start lg:w-0 lg:flex-1">
+        <div className="flex justify-between items-center py-3">
+          {/* Logo - Mobile */}
+          <div className="md:hidden flex justify-start">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold font-heading text-primary-600">ATTIRE</span>
-              <span className="text-xs text-secondary-500 ml-1 font-accent">Fashion Redefined</span>
             </Link>
           </div>
           
           {/* Mobile menu button */}
-          <div className="-mr-2 -my-2 md:hidden">
+          <div className="md:hidden">
             <Button 
               variant="ghost" 
               size="icon"
@@ -76,62 +75,62 @@ export function Header() {
               <Menu className="h-6 w-6" />
             </Button>
           </div>
-          
-          {/* Navigation Links - Desktop */}
-          <nav className="hidden md:flex space-x-10">
-            {categories?.map((category: any) => (
-              <Link 
-                key={category.id} 
-                href={`/products/category/${category.slug}`}
-                className="text-base font-medium text-gray-500 hover:text-primary-600 transition-colors"
-              >
-                {category.name}
+
+          {/* Desktop header layout */}
+          <div className="hidden md:flex w-full items-center justify-between">
+            {/* Logo - Desktop */}
+            <div className="flex justify-start">
+              <Link href="/" className="flex items-center">
+                <span className="text-2xl font-bold font-heading text-primary-600">ATTIRE</span>
+                <span className="text-xs text-secondary-500 ml-1 font-accent hidden lg:inline">Fashion Redefined</span>
               </Link>
-            ))}
-            <Link href="/products" className="text-base font-medium text-gray-500 hover:text-primary-600 transition-colors">
-              All Products
-            </Link>
-          </nav>
-          
-          {/* Right section icons */}
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0 space-x-4 lg:space-x-6">
-            <form onSubmit={handleSearch} className="relative hidden lg:block">
-              <Input
-                type="text"
-                placeholder="Search products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm w-56 xl:w-64"
-              />
-              <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
-            </form>
+            </div>
             
-            <form onSubmit={handleSearch} className="relative lg:hidden">
-              <Button variant="ghost" size="icon" className="text-gray-500 hover:text-primary-600" type="submit">
-                <Search className="h-6 w-6" />
-              </Button>
-            </form>
+            {/* Navigation Links - Center */}
+            <nav className="flex space-x-6 lg:space-x-10 mx-auto">
+              {categories?.map((category: any) => (
+                <Link 
+                  key={category.id} 
+                  href={`/products/category/${category.slug}`}
+                  className="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors"
+                >
+                  {category.name}
+                </Link>
+              ))}
+            </nav>
             
-            <Link href={user ? "/account" : "/auth"} className="text-gray-500 hover:text-primary-600 transition-colors">
-              <User className="h-6 w-6" />
-            </Link>
-            <Link href="/wishlist" className="text-gray-500 hover:text-primary-600 transition-colors">
-              <Heart className="h-6 w-6" />
-            </Link>
-            <button 
-              onClick={openCart}
-              className="text-gray-500 hover:text-primary-600 transition-colors relative"
-              aria-label="Open cart"
-            >
-              <ShoppingBag className="h-6 w-6" />
-              {totalCartItems > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {totalCartItems}
-                </span>
-              )}
-            </button>
-            
-            <ThemeToggle />
+            {/* Right section icons */}
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <form onSubmit={handleSearch} className="relative">
+                <Input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-9 pr-4 py-1.5 border border-gray-300 rounded-full text-sm w-44 lg:w-56 bg-gray-50"
+                />
+                <Search className="absolute left-3 top-2 h-4 w-4 text-gray-400" />
+              </form>
+              
+              <Link href={user ? "/account" : "/auth"} className="text-gray-600 hover:text-primary-600 transition-colors">
+                <User className="h-5 w-5" />
+              </Link>
+              <Link href="/wishlist" className="text-gray-600 hover:text-primary-600 transition-colors">
+                <Heart className="h-5 w-5" />
+              </Link>
+              <button 
+                onClick={openCart}
+                className="text-gray-600 hover:text-primary-600 transition-colors relative"
+                aria-label="Open cart"
+              >
+                <ShoppingBag className="h-5 w-5" />
+                {totalCartItems > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 bg-primary-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                    {totalCartItems}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
