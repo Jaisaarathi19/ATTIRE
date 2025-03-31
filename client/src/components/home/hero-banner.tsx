@@ -121,6 +121,7 @@ export function HeroBanner() {
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <Button 
+                variant="black"
                 size="lg"
                 className="rounded-full shadow-md hover:scale-105 transition duration-300 ease-in-out"
                 asChild

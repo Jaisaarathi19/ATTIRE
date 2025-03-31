@@ -196,8 +196,8 @@ export function FeaturedProducts() {
         
         <div className="mt-10 text-center">
           <Button 
-            variant="outline" 
-            className="inline-flex items-center justify-center px-6 py-3 border border-primary-600 text-base font-medium rounded-full text-primary-600 hover:bg-primary-50"
+            variant="black" 
+            className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-full text-white hover:bg-black/90"
             asChild
           >
             <Link href="/products">
