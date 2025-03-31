@@ -49,7 +49,7 @@ export interface IStorage {
   seedInitialData(): Promise<void>;
   
   // Session store
-  sessionStore: session.SessionStore;
+  sessionStore: session.MemoryStore; // Use the correct type for session store
 }
 
 export class MemStorage implements IStorage {
@@ -59,7 +59,7 @@ export class MemStorage implements IStorage {
   private cartItemsMap: Map<number, CartItem>;
   private wishlistItemsMap: Map<number, WishlistItem>;
   
-  sessionStore: session.SessionStore;
+  sessionStore: session.MemoryStore;
   
   private userId: number = 1;
   private categoryId: number = 1;
@@ -92,7 +92,15 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.userId++;
-    const user: User = { ...insertUser, id, createdAt: new Date() };
+    const user: User = {
+      ...insertUser, 
+      id, 
+      createdAt: new Date(),
+      address: (insertUser as any).address ?? null, // Ensure address is included
+      phone: (insertUser as any).phone ?? null,     // Ensure phone is included
+      name: insertUser.name ?? null,                // Ensure name is not undefined
+      email: insertUser.email ?? null               // Ensure email is not undefined
+    };
     this.usersMap.set(id, user);
     return user;
   }
@@ -114,7 +122,12 @@ export class MemStorage implements IStorage {
 
   async createCategory(category: InsertCategory): Promise<Category> {
     const id = this.categoryId++;
-    const newCategory: Category = { ...category, id };
+    const newCategory: Category = { 
+      ...category, 
+      id,
+      description: category.description ?? null,
+      image: category.image ?? null 
+    };
     this.categoriesMap.set(id, newCategory);
     return newCategory;
   }
@@ -162,15 +175,19 @@ export class MemStorage implements IStorage {
 
   async createProduct(product: InsertProduct): Promise<Product> {
     const id = this.productId++;
-    const newProduct: Product = { 
-      ...product, 
-      id, 
+    const newProduct: Product = {
+      ...product,
+      id,
       createdAt: new Date(),
       rating: product.rating || 0,
       reviewCount: product.reviewCount || 0,
       featured: product.featured || false,
       trending: product.trending || false,
-      inventory: product.inventory || 0
+      inventory: product.inventory || 0,
+      description: product.description ?? '', 
+      originalPrice: product.originalPrice ?? null,
+      discount: product.discount ?? null,
+      images: product.images ?? null // Ensure images is not undefined
     };
     this.productsMap.set(id, newProduct);
     return newProduct;
@@ -198,7 +215,15 @@ export class MemStorage implements IStorage {
 
   async addToCart(cartItem: InsertCartItem): Promise<CartItem> {
     const id = this.cartItemId++;
-    const newCartItem: CartItem = { ...cartItem, id, createdAt: new Date() };
+    const newCartItem: CartItem = {
+      id,
+      color: cartItem.color ?? null,
+      size: cartItem.size ?? null,
+      userId: cartItem.userId,
+      productId: cartItem.productId,
+      quantity: cartItem.quantity ?? 1,
+      createdAt: new Date()
+    };
     this.cartItemsMap.set(id, newCartItem);
     return newCartItem;
   }
