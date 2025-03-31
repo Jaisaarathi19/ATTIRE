@@ -139,10 +139,10 @@ export default function CheckoutPage() {
               </div>
               
               <div className="flex justify-center space-x-4">
-                <Button asChild>
+                <Button asChild className="bg-white text-gray-900 border border-gray-200">
                   <a href="/">Return to Home</a>
                 </Button>
-                <Button variant="outline" asChild>
+                <Button variant="outline" asChild className="bg-white text-gray-900 border border-gray-200">
                   <a href="/products">Continue Shopping</a>
                 </Button>
               </div>

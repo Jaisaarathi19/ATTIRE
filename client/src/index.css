@@ -10,4 +10,12 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+  
+  input, select, textarea {
+    @apply text-gray-900;
+  }
+  
+  .bg-white, [class*="bg-gray-50"], [class*="bg-gray-100"] {
+    @apply text-gray-900;
+  }
 }

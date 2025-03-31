@@ -57,9 +57,9 @@ export function MobileMenu({ isOpen, onClose, categories }: MobileMenuProps) {
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm w-full"
+            className="pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm w-full text-gray-900"
           />
-          <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-900" />
         </form>
         
         <h3 className="font-medium text-gray-500 uppercase text-xs tracking-wider mb-3">Categories</h3>

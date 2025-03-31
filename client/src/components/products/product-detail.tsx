@@ -232,7 +232,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
         
         <div className="mt-6">
           <h3 className="text-sm font-medium text-gray-900">Description</h3>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-gray-900">
             {product.description}
           </p>
         </div>
@@ -320,11 +320,11 @@ export function ProductDetail({ product }: ProductDetailProps) {
         <div className="mt-6 border-t border-gray-200 pt-4 space-y-2">
           <div className="flex items-center text-sm">
             <Package className="text-primary-500 mr-2 h-5 w-5" />
-            <span>Free delivery on orders above ₹999</span>
+            <span className="text-gray-900">Free delivery on orders above ₹999</span>
           </div>
           <div className="flex items-center text-sm">
             <ShieldCheck className="text-primary-500 mr-2 h-5 w-5" />
-            <span>COD available</span>
+            <span className="text-gray-900">COD available</span>
           </div>
         </div>
       </div>
