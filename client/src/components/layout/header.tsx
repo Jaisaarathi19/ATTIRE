@@ -72,7 +72,7 @@ export function Header() {
               onClick={() => setShowMobileMenu(true)}
               aria-label="Open menu"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 text-gray-900" />
             </Button>
           </div>
 
@@ -107,9 +107,9 @@ export function Header() {
                   placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9 pr-4 py-1.5 border border-gray-300 rounded-full text-sm w-44 lg:w-56 bg-gray-50"
+                  className="pl-9 pr-4 py-1.5 border border-gray-300 rounded-full text-sm w-44 lg:w-56 bg-gray-50 text-gray-900"
                 />
-                <Search className="absolute left-3 top-2 h-4 w-4 text-gray-500" />
+                <Search className="absolute left-3 top-2 h-4 w-4 text-gray-900" />
               </form>
               
               <Link href={user ? "/account" : "/auth"} className="text-gray-900 hover:text-primary-600 transition-colors">
