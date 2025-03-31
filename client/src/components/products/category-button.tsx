@@ -11,7 +11,7 @@ export function CategoryButton({ active, children, className, ...props }: Catego
     <button
       className={cn(
         "category-btn whitespace-nowrap px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors border-b-2 border-transparent",
-        active && "text-primary-600 border-primary-600",
+        active && "text-white bg-gray-900 rounded-md border-transparent",
         className
       )}
       {...props}

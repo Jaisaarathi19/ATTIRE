@@ -247,7 +247,7 @@ export default function ProductsPage() {
                   variant="outline"
                   size="sm"
                   onClick={clearFilters}
-                  className="mt-4 w-full"
+                  className="mt-4 w-full text-white bg-gray-900 border-gray-900 hover:bg-gray-800 hover:text-white"
                 >
                   <X className="h-4 w-4 mr-2" />
                   Clear Filters
@@ -345,7 +345,7 @@ export default function ProductsPage() {
                     variant="outline"
                     size="sm"
                     onClick={clearFilters}
-                    className="mt-4 w-full"
+                    className="mt-4 w-full text-white bg-gray-900 border-gray-900 hover:bg-gray-800 hover:text-white"
                   >
                     <X className="h-4 w-4 mr-2" />
                     Clear Filters
