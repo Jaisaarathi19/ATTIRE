@@ -168,11 +168,15 @@ export default function ProductsPage() {
               </Button>
               
               <Select value={sortOption} onValueChange={setSortOption}>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Sort by" />
+                <SelectTrigger className={`w-[180px] ${sortOption === "featured" ? "bg-gray-900 text-white border-gray-900" : ""}`}>
+                  {sortOption === "featured" ? (
+                    <span className="text-white">Featured</span>
+                  ) : (
+                    <SelectValue placeholder="Sort by" />
+                  )}
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="featured">Featured</SelectItem>
+                  <SelectItem value="featured" className="text-white bg-gray-900">Featured</SelectItem>
                   <SelectItem value="price-low-high">Price: Low to High</SelectItem>
                   <SelectItem value="price-high-low">Price: High to Low</SelectItem>
                   <SelectItem value="newest">Newest</SelectItem>
