@@ -14,7 +14,6 @@ export function Footer() {
           <div>
             <div className="flex items-center">
               <span className="text-2xl font-bold font-heading text-white">ATTIRE</span>
-              <span className="text-xs text-secondary-400 ml-1 font-accent">Fashion Redefined</span>
             </div>
             <p className="mt-4 text-gray-400 text-sm">
               Your one-stop destination for all fashion needs. From traditional ethnic wear to modern western outfits, we have it all.
