@@ -39,7 +39,13 @@ export async function setupVite(app: Express, server: Server) {
         process.exit(1);
       },
     },
-    server: serverOptions,
+    server: {
+      middlewareMode: true,
+      hmr: {
+        server,
+      },
+      allowedHosts: true // Ensure allowedHosts is compatible
+    },
     appType: "custom",
   });
 

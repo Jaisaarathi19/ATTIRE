@@ -57,7 +57,7 @@ export function CartItem({ item, onRemove, onUpdateQuantity }: CartItemProps) {
           <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md">
             <Link href={`/product/${item.product.slug}`}>
               <img
-                src={item.product.images[0]}
+                src={item.product.images?.[0] ?? 'default-image-url'}
                 alt={item.product.name}
                 className="h-full w-full object-cover object-center"
               />

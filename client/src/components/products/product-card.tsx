@@ -72,7 +72,8 @@ export function ProductCard({ product, className }: ProductCardProps) {
       userId: user?.id || 0,
       size: null,
       color: null,
-      product
+      product,
+      createdAt: new Date() // Add createdAt property
     });
     
     toast({
