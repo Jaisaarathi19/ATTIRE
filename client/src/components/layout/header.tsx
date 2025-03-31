@@ -60,7 +60,7 @@ export function Header() {
           {/* Logo - Mobile */}
           <div className="md:hidden flex justify-start">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold font-heading text-primary-600">ATTIRE</span>
+              <span className="text-2xl font-bold font-heading text-gray-900">ATTIRE</span>
             </Link>
           </div>
           
@@ -81,8 +81,8 @@ export function Header() {
             {/* Logo - Desktop */}
             <div className="flex justify-start">
               <Link href="/" className="flex items-center">
-                <span className="text-2xl font-bold font-heading text-primary-600">ATTIRE</span>
-                <span className="text-xs text-secondary-500 ml-1 font-accent hidden lg:inline">Fashion Redefined</span>
+                <span className="text-2xl font-bold font-heading text-gray-900">ATTIRE</span>
+                <span className="text-xs text-primary-600 ml-1 font-accent hidden lg:inline">Fashion Redefined</span>
               </Link>
             </div>
             
